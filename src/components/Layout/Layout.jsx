@@ -1,17 +1,19 @@
-import React from 'react'
-import NavBar from './NavBar'
-import Footer from "./Footer"
-import Newsletter from '../Newsletter'
+import React from "react";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
+import Newsletter from "../Home/Newsletter";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
-    <div className='flex flex-col w-[100%]'>
-      <NavBar/>
-      <main className=''>{children}</main>
+    <div className="flex flex-col w-[100%]">
+      <NavBar />
+      
+      <main className="w-full">{children}</main>
+      
       <Newsletter />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
