@@ -59,7 +59,7 @@ const NewPostForm = () => {
     <div className="text-white">
       <form
         onSubmit={handlePostSubmit}
-        className="flex flex-col bg-white h-[400px] w-[400px] rounded-md leading-8 p-4"
+        className="flex flex-col bg-white h-[500px] w-[400px] rounded-md leading-8 p-4"
       >
         <div className="flex justify-between">
           <span className="text-[#023047] font-bold text-xl mb-4">
@@ -94,14 +94,16 @@ const NewPostForm = () => {
         />
 
         <label className="text-[#023047]">Description</label>
-        <input
+        <textarea
           className="border rounded px-4 text-[#023047]"
           type="text"
-          placeholder="Enter image post description"
+          placeholder="Enter post description"
+          cols="10"
+          rows="30"
           name="description"
           value={description}
           onChange={handleChange}
-        />
+        ></textarea>
 
         <label className="text-[#023047]">Writer</label>
         <input

@@ -12,7 +12,7 @@ const BookCard = () => {
   // Add To Cart Button is in context
 
   return (
-    <div className="text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 w-[100%] md:max-h-[650px] md:overflow-y-scroll w-[100%]">
+    <div className="text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 w-[100%] md:max-h-[1200px] md:overflow-y-scroll w-[100%]">
       {fromLocalForBook &&
         fromLocalForBook.map((item) => {
           return (

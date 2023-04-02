@@ -12,6 +12,7 @@ const GlobalContextProvider = ({ children }) => {
   const [bookModal, setBookModal] = useState(false)
   const [localCartBooks, setLocalCartBooks] = useState([]);
   const [updateModal, setUpdateModal] = useState(false);
+  const [checkoutform, setCheckOutForm] = useState(false)
   
   //home page 
   useEffect(() => {
@@ -20,7 +21,7 @@ const GlobalContextProvider = ({ children }) => {
 
   const getPostFromStorage = () => {
     const getPost = JSON.parse(localStorage.getItem("posts"));
-    const slicedPosts = getPost;
+    const slicedPosts = getPost.slice(0,5)
     setFromLocal(slicedPosts);
   };
  
@@ -57,7 +58,6 @@ const GlobalContextProvider = ({ children }) => {
     getPostFromStorage();
   };
 
-  // const [cartItems, setCartItems] = useState([])
 
   // navbar function
   const getCartLocalBooks = ()=>{
@@ -71,7 +71,7 @@ const GlobalContextProvider = ({ children }) => {
     const { id, image, title, writer, price } = item;
 
     const data = { id, image, title, writer, price, qty:1 };
-// console.log(data,'chima1111')
+
     const localBookCartItems = localStorage.getItem("cartbooks")
       ? JSON.parse(localStorage.getItem("cartbooks"))
       : [];
@@ -88,6 +88,20 @@ const GlobalContextProvider = ({ children }) => {
 
     getCartLocalBooks()
   };
+
+  const totalPrice = localCartBooks.reduce(
+    (price, item) => price + item.qty * item.price,
+    0
+  );
+
+  // post edit function
+  const [itemId, setitemId] = useState(null)
+
+  const editFunc = (id)=>{
+    setUpdateModal(true)
+    setitemId(id)
+    getPostFromStorageForBlog()
+  }
 
   const store = {
     openModal,
@@ -112,7 +126,12 @@ const GlobalContextProvider = ({ children }) => {
     loading,
     setLoading,
     updateModal,
-    setUpdateModal
+    setUpdateModal,
+    checkoutform,
+    setCheckOutForm,
+    totalPrice,
+     editFunc,
+     itemId
   };
 
   return (
