@@ -18,6 +18,7 @@ const NavBar = () => {
 
   useEffect(() => {
     getCartLocalBooks()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

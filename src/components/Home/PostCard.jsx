@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { GlobalContext } from "../../context";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";

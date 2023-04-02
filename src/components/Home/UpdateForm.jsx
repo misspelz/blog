@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const UpdateForm = ({ props: { id } }) => {
   console.log(id);
-  const { loading, setLoading, setUpdateModal, getPostFromStorage } = useContext(GlobalContext);
+  const { loading, setLoading, setUpdateModal, getPostFromStorage} = useContext(GlobalContext);
 
   const [state, setState] = useState({
     image: "",
@@ -18,6 +18,7 @@ const UpdateForm = ({ props: { id } }) => {
   // get post from local storage
   useEffect(() => {
     getLocalPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getLocalPosts = () => {

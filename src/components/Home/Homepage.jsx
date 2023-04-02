@@ -2,7 +2,7 @@ import React from "react";
 import PostCard from "./PostCard";
 import HomeHero from "./HomeHero";
 import SideBar from "../Layout/SideBar";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Homepage = () => {
   return (
