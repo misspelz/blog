@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../context";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
-import NewPost from "./NewPost"
+// import NewPost from "./NewPost"
 import { Link } from "react-router-dom";
 
 const ImageDiv = () => {
@@ -88,7 +88,7 @@ const ImageDiv = () => {
       </div>
 
       {/* ADD NEW POST */}
-      <NewPost />
+      {/* <NewPost /> */}
     </div>
   )
 }

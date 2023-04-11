@@ -1,25 +1,25 @@
-import React, { useState, useContext,useEffect } from "react";
-import { GlobalContext } from "../../context";
+import React, { useState } from "react";
+// import { GlobalContext } from "../../context";
 import { Link } from "react-router-dom";
 import { DiTechcrunch } from "react-icons/di";
 import { FaHamburger } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
-import { GiShoppingCart } from "react-icons/gi";
+// import { GiShoppingCart } from "react-icons/gi";
 
 
 const NavBar = () => {
-  const { localCartBooks, getCartLocalBooks } = useContext(GlobalContext);
-  console.log(localCartBooks)
+  // const { localCartBooks, getCartLocalBooks } = useContext(GlobalContext);
+  // console.log(localCartBooks)
   const [open, setOpen] = useState(false);
 
   const MenuBar = () => {
     setOpen((prev)=> !prev);
   };
 
-  useEffect(() => {
-    getCartLocalBooks()
+  // useEffect(() => {
+    // getCartLocalBooks()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  // }, [])
 
   return (
     <div className="fixed z-10 w-full h-[80px] text-white bg-[#023047] flex justify-between">
@@ -65,10 +65,10 @@ const NavBar = () => {
         <button className="md:hidden" onClick={MenuBar}>
           {open ? <FaTimes size={30} /> : <FaHamburger size={30} />}
         </button>
-        <div className="hidden md:flex md:block md:justify-center items-center">
+        {/* <div className="hidden md:flex md:block md:justify-center items-center">
           <Link to="/cart"><span className="relative"><GiShoppingCart size={30}/></span></Link>
           <span className="absolute top-4 right-14 bg-white text-[#023047] px-[4px] rounded-full font-bold">{localCartBooks && localCartBooks.length}</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );

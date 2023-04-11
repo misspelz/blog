@@ -6,13 +6,14 @@ import Store from "./screens/Store";
 import Layout from "./components/Layout/Layout";
 import CartItem from "./components/Store/CartItem";
 import BlogTitle from "./components/Home/PostDetail";
-import About from "./components/Dashboard/About";
-import Analytics from "./components/Dashboard/Analytics";
-import Product from "./components/Dashboard/Product";
-import Comments from "./components/Dashboard/Comments";
+// import About from "./components/Dashboard/About";
+// import Analytics from "./components/Dashboard/Analytics";
+// import Product from "./components/Dashboard/Product";
+// import Comments from "./components/Dashboard/Comments";
 import DashPage from "./components/Dashboard/DashPage";
 // import DashLayOut from "./components/Dashboard/DashLayout";
 import DashLayOut from "./components/Dashboard/DashLayOut";
+import NewPost from "./components/Home/NewPost";
 
 
 const Router = () => {
@@ -20,11 +21,8 @@ const Router = () => {
     <div>
       <Routes>
         <Route path="/dashboard" element={<DashLayOut />}>
-           <Route index element={<DashPage />} />
-           <Route path="about" element={<About />} />
-           <Route path="analytics" element={<Analytics />} />
-           <Route path="products" element={<Product />} />
-           <Route path="comments" element={<Comments />} />
+           <Route path="home" element={<DashPage />} />
+           <Route path="newpost" element={<NewPost />} />
         </Route>
 
         <Route

@@ -18,7 +18,7 @@ const BookCard = () => {
           return (
             <div
               key={item.id}
-              className="flex flex-col justify-between my-6 mx-6 p-8 md:p-6 rounded-md bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] h-[820px] md:h-[600px]"
+              className="flex flex-col justify-between my-6 mx-6 p-8 md:p-6 rounded-md bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] h-[820px] md:h-[620px]"
             >
               <div>
                 <img

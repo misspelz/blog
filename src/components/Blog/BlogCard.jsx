@@ -3,21 +3,14 @@ import { GlobalContext } from "../../context";
 // import { FaEdit } from "react-icons/fa";
 // import { MdDeleteForever } from "react-icons/md";
 import { FaShareAlt } from "react-icons/fa";
+import { RWebShare } from "react-web-share";
 import { Link } from "react-router-dom";
 // import Modal from "../Modal";
-// import UpdateForm from "./UpdateForm";
-import { RWebShare } from "react-web-share";
-// import ScrollToTop from "react-scroll-to-top";
+// import UpdateForm from "../Home/UpdateForm";
 
-const PostCard = () => {
-  const { fromLocal } = useContext(GlobalContext);
-  console.log(fromLocal);
-
-  // getPostFromStorage and useEffect is in context
-
-  // delete function is in context
-
-  // edit function is in context
+const BlogCard = () => {
+  const {  fromLocalForBlog } =
+    useContext(GlobalContext);
 
   // truncate title
   const truncate = (str, num) => {
@@ -31,17 +24,17 @@ const PostCard = () => {
   return (
     <>
       {/* {updateModal && (
-                  <Modal>
-                    <UpdateForm props={{ id: itemId }} />
-                  </Modal>
-                )} */}
-      <div className="text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 w-[100%] md:max-h-[1000px] md:overflow-y-scroll">
-        {fromLocal.length &&
-          fromLocal.map((item) => {
+        <Modal>
+          <UpdateForm props={{ id: itemId }} />
+        </Modal>
+      )} */}
+      <div className="text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 w-[100%]">
+        {fromLocalForBlog &&
+          fromLocalForBlog.map((item) => {
             return (
               <div
                 key={item.id}
-                className="flex flex-col justify-between my-6 mx-6 p-6 rounded-md bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] h-[500px] sm:h-[450px]"
+                className="flex flex-col justify-between my-6 mx-6 p-6 rounded-md bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] h-[400px] sm:h-[450px]"
               >
                 <div>
                   <Link to={`/blog/${item.id}`}>
@@ -53,11 +46,25 @@ const PostCard = () => {
                   </Link>
                   {/* <p className="mb-2 text-[#023047]">{item.description}</p> */}
                   <p className="text-[12px] font-bold text-[#023047]">
-                    by {item.writer}
+                    by: {item.writer}
                   </p>
                 </div>
 
-                <div className="flex flex-row justify-between mt-8 md:mt-4 ">
+                <div className="flex flex-row justify-between mt-4">
+                  {/* <div className="flex justify-between w-[35%]">
+                    <span
+                      onClick={() => editFunc(item.id)}
+                      className="cursor-pointer text-[#023047] rounded-full hover:text-[#ffa500] "
+                    >
+                      <FaEdit size={20} />
+                    </span>
+                    <span
+                      onClick={() => handleDelete(item)}
+                      className="cursor-pointer text-[#023047] rounded-full hover:text-[#ffa500]"
+                    >
+                      <MdDeleteForever size={20} />
+                    </span>
+                  </div> */}
                   <RWebShare
                     data={{
                       text: "Like humans, flamingos make friends for life",
@@ -72,32 +79,13 @@ const PostCard = () => {
                       </span>
                     </div>
                   </RWebShare>
-                  {/* <div className="flex justify-between items-center w-[35%]"> */}
-                  {/* <span
-                        onClick={() => editFunc(item.id)}
-                        className="cursor-pointer text-[#023047] rounded-full hover:text-[#ffa500] "
-                      >
-                        <FaEdit size={20} />
-                      </span> */}
-                  {/* <span
-                        onClick={() => handleDelete(item)}
-                        className="cursor-pointer text-[#023047] rounded-full hover:text-[#ffa500] hidden"
-                      >
-                        <MdDeleteForever size={20} />
-                      </span> */}
-                  {/* </div> */}
                 </div>
               </div>
             );
+            // <ScrollToTop/>
           })}
-        <Link to="/blog">
-          <div className="flex justify-center items-center mb-10 font-bold hover:text-[#023047] italic text-md md:text-xl">
-            See more posts
-          </div>
-        </Link>
       </div>
     </>
   );
 };
-
-export default PostCard;
+export default BlogCard;

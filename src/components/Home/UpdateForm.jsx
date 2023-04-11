@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const UpdateForm = ({ props: { id } }) => {
   console.log(id);
-  const { loading, setLoading, setUpdateModal, getPostFromStorage} = useContext(GlobalContext);
+  const { loading, setLoading, setUpdateModal, getPostFromStorageForBlog} = useContext(GlobalContext);
 
   const [state, setState] = useState({
     image: "",
@@ -81,7 +81,7 @@ const UpdateForm = ({ props: { id } }) => {
 
       setUpdateModal(false);
 
-      getPostFromStorage()
+      getPostFromStorageForBlog()
     }, 3000);
 
   };

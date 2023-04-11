@@ -45,7 +45,7 @@ const GlobalContextProvider = ({ children }) => {
     setFromLocalForBook(getBooks);
   };
 
-  // post card
+  // post delete function
   const handleDelete = (item) => {
     const filteredData = fromLocal.filter((single) => single.id !== item.id);
     
@@ -55,7 +55,7 @@ const GlobalContextProvider = ({ children }) => {
       localStorage.setItem("posts", JSON.stringify(filteredData));
     }
 
-    getPostFromStorage();
+    getPostFromStorageForBlog();
   };
 
 
@@ -66,7 +66,7 @@ const GlobalContextProvider = ({ children }) => {
   }
 
 
-
+  // add to cart in store page
   const handleAddToCart = (item) => {
     const { id, image, title, writer, price } = item;
 
