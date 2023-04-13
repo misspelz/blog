@@ -21,7 +21,8 @@ const GlobalContextProvider = ({ children }) => {
 
   const getPostFromStorage = () => {
     const getPost = JSON.parse(localStorage.getItem("posts"));
-    const slicedPosts = getPost.slice(0,5)
+    const slicedPosts = getPost && getPost.slice(0,5)
+
     setFromLocal(slicedPosts);
   };
  
