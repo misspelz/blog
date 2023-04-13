@@ -11,7 +11,7 @@ import { RWebShare } from "react-web-share";
 
 const PostCard = () => {
   const { fromLocal } = useContext(GlobalContext);
-  console.log(fromLocal);
+  
 
   // getPostFromStorage and useEffect is in context
 

@@ -3,7 +3,7 @@ import { GlobalContext } from "../../context";
 
 const BookCard = () => {
   const { fromLocalForBook, handleAddToCart } = useContext(GlobalContext);
-  console.log(fromLocalForBook);
+  
 
   // getPostFromStorage and useEffect is in context
 
