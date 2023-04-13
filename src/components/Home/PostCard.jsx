@@ -36,7 +36,7 @@ const PostCard = () => {
                   </Modal>
                 )} */}
       <div className="text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 w-[100%] md:max-h-[1000px] md:overflow-y-scroll">
-        {fromLocal.length &&
+        {fromLocal.length > 0 &&
           fromLocal.map((item) => {
             return (
               <div
