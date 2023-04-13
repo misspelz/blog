@@ -68,7 +68,6 @@ const Blogpage = () => {
           <img
             className="w-full h-[420px] md:h-[450px] brightness-50 duration-500"
             src={slides[imageIndex].url}
-            f
             alt=""
           />
 
