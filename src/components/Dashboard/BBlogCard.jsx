@@ -65,7 +65,7 @@ const BlogCard = () => {
                       <MdDeleteForever size={20} />
                     </span>
                   </div>
-                  <RWebShare
+                  {/* <RWebShare
                     data={{
                       text: "Like humans, flamingos make friends for life",
                       url: `http://localhost:3000/blog/${item.id}`,
@@ -78,7 +78,7 @@ const BlogCard = () => {
                         <FaShareAlt size={20} />
                       </span>
                     </div>
-                  </RWebShare>
+                  </RWebShare> */}
                 </div>
               </div>
             );

@@ -14,7 +14,7 @@ const BlogCard = () => {
 
   // truncate title
   const truncate = (str, num) => {
-    if (str.length > num) {
+    if (str && str.length > num) {
       str = str.substring(0, num) + "...";
       return str;
     }
@@ -34,7 +34,7 @@ const BlogCard = () => {
             return (
               <div
                 key={item.id}
-                className="flex flex-col justify-between my-6 mx-6 p-6 rounded-md bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] h-[400px] sm:h-[450px]"
+                className="flex flex-col justify-between my-6 mx-6 p-6 rounded-md bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] h-[500px] sm:h-[450px]"
               >
                 <div>
                   <Link to={`/blog/${item.id}`}>

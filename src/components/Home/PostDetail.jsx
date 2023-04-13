@@ -6,7 +6,7 @@ import { FaTwitter, FaFacebook, FaLinkedinIn } from "react-icons/fa";
 const PostDetail = () => {
   const { id } = useParams();
   const [postDetail, setPostDetail] = useState([]);
-  console.log(postDetail);
+  
 
   useEffect(() => {
     getLocalPosts();
@@ -18,7 +18,7 @@ const PostDetail = () => {
   };
 
   const SinglePost = postDetail.find((post) => post.id === id);
-  console.log(SinglePost);
+  
 
   return (
     <div className="mt-[100px] md:mt-20 flex flex-col md:flex-row w-[100%] pl-10 md:px-20 md:py-10">
@@ -46,7 +46,7 @@ const PostDetail = () => {
           {SinglePost && SinglePost.description}
         </p>
 
-        <div className="flex flex-col mt-4">
+        <div className="flex flex-col my-4">
           <hr />
           <span className="text-red-700 uppercase font-semibold mt-4">
             Share

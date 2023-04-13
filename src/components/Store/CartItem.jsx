@@ -142,7 +142,7 @@ const CartItem = () => {
           {localCartBooks &&
             localCartBooks.map((item) => {
               return (
-                <div className="w-[400px] flex my-4 border p-2 rounded-md">
+                <div key={item.id} className="w-[400px] flex my-4 border p-2 rounded-md">
                   <div className="w-[100%]">
                     <img
                       className="w-[200px] h-[200px]"
