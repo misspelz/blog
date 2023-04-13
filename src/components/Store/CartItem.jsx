@@ -96,7 +96,7 @@ const CartItem = () => {
           </h3>
           <hr />
         </div>
-        {localCartBooks.length === 0 && (
+        {localCartBooks && localCartBooks.length === 0 && (
           <div>
             <h3
               className="text-black mt-10 
@@ -107,7 +107,7 @@ const CartItem = () => {
           </div>
         )}
         <div>
-          {localCartBooks.length === 0 && (
+          {localCartBooks && localCartBooks.length === 0 && (
             <>
               <Player
                 autoplay
@@ -127,7 +127,7 @@ const CartItem = () => {
             </div>
           </Link>
           <div>
-            {localCartBooks.length >= 1 && (
+            {localCartBooks && localCartBooks.length >= 1 && (
               <h3
                 onClick={handleClearCart}
                 className="text-black bg-red-500 mx-10 p-4 rounded font-semibold text-white cursor-pointer"
@@ -185,13 +185,13 @@ const CartItem = () => {
             })}
         </div>
 
-        {localCartBooks >= 1 && (
+        {localCartBooks && localCartBooks >= 1 && (
           <div className="p-4 border w-[40%] md:w-[30%] rounded flex justify-center font-bold text-[18px] mdtext-2xl my-4">
             TOTAL: ${totalPrice.toFixed(2)}
           </div>
         )}
 
-        {localCartBooks.length >= 1 && (
+        {localCartBooks && localCartBooks.length >= 1 && (
           <div
             onClick={handleCheckOut}
             className="p-4 border w-[40%] md:w-[30%] rounded flex justify-center font-bold text-[18px] mdtext-2xl my-4 cursor-pointer bg-[#023047] text-white hover:bg-[#ffa500]"
