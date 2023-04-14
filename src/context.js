@@ -9,24 +9,24 @@ const GlobalContextProvider = ({ children }) => {
   const [fromLocalForBlog, setFromLocalForBlog] = useState([]);
   const [fromLocalForBook, setFromLocalForBook] = useState([]);
   const [imageIndex, setImageIndex] = useState(0);
-  const [bookModal, setBookModal] = useState(false)
+  const [bookModal, setBookModal] = useState(false);
   const [localCartBooks, setLocalCartBooks] = useState([]);
   const [updateModal, setUpdateModal] = useState(false);
-  const [checkoutform, setCheckOutForm] = useState(false)
-  
-  //home page 
+  const [checkoutform, setCheckOutForm] = useState(false);
+
+  //home page
   useEffect(() => {
     getPostFromStorage();
   }, [openModal]);
 
   const getPostFromStorage = () => {
     const getPost = JSON.parse(localStorage.getItem("posts"));
-    const slicedPosts = getPost && getPost.slice(0,5)
+    const slicedPosts = getPost && getPost.slice(0, 5);
 
     setFromLocal(slicedPosts);
   };
- 
-  //blog page 
+
+  //blog page
   useEffect(() => {
     getPostFromStorageForBlog();
   }, [openModal]);
@@ -36,7 +36,7 @@ const GlobalContextProvider = ({ children }) => {
     setFromLocalForBlog(getBlogPost);
   };
 
-  //store page 
+  //store page
   useEffect(() => {
     getBookFromStorageForStore();
   }, [bookModal]);
@@ -49,33 +49,32 @@ const GlobalContextProvider = ({ children }) => {
   // post delete function
   const handleDelete = (item) => {
     const filteredData = fromLocal.filter((single) => single.id !== item.id);
-    
-    const decision = window.confirm("Do you want to delete this post?")
 
-    if(decision){
+    const decision = window.confirm("Do you want to delete this post?");
+
+    if (decision) {
       localStorage.setItem("posts", JSON.stringify(filteredData));
     }
 
     getPostFromStorageForBlog();
   };
 
-
   // navbar function
-  const getCartLocalBooks = ()=>{
-    const getCartBooks = JSON.parse(localStorage.getItem("cartbooks"))
-    setLocalCartBooks(getCartBooks)
-  }
-
+  const getCartLocalBooks = () => {
+    const getCartBooks = JSON.parse(localStorage.getItem("cartbooks"));
+    setLocalCartBooks(getCartBooks);
+  };
 
   // add to cart in store page
   const handleAddToCart = (item) => {
     const { id, image, title, writer, price } = item;
 
-    const data = { id, image, title, writer, price, qty:1 };
+    const data = { id, image, title, writer, price, qty: 1 };
 
     const localBookCartItems = localStorage.getItem("cartbooks")
       ? JSON.parse(localStorage.getItem("cartbooks"))
       : [];
+      
 
     const itemExist = localBookCartItems.find((book) => book.id === id);
 
@@ -85,24 +84,25 @@ const GlobalContextProvider = ({ children }) => {
       const localBookCartItemsCopy = [...localBookCartItems, data];
 
       localStorage.setItem("cartbooks", JSON.stringify(localBookCartItemsCopy));
+
+      alert("Item has been added to Cart");
     }
 
-    getCartLocalBooks()
+    getCartLocalBooks();
   };
 
-  const totalPrice = localCartBooks && localCartBooks.reduce(
-    (price, item) => price + item.qty * item.price,
-    0
-  );
+  const totalPrice =
+    localCartBooks &&
+    localCartBooks.reduce((price, item) => price + item.qty * item.price, 0);
 
   // post edit function
-  const [itemId, setitemId] = useState(null)
+  const [itemId, setitemId] = useState(null);
 
-  const editFunc = (id)=>{
-    setUpdateModal(true)
-    setitemId(id)
-    getPostFromStorageForBlog()
-  }
+  const editFunc = (id) => {
+    setUpdateModal(true);
+    setitemId(id);
+    getPostFromStorageForBlog();
+  };
 
   const store = {
     openModal,
@@ -131,8 +131,8 @@ const GlobalContextProvider = ({ children }) => {
     checkoutform,
     setCheckOutForm,
     totalPrice,
-     editFunc,
-     itemId
+    editFunc,
+    itemId,
   };
 
   return (
