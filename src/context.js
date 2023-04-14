@@ -90,7 +90,7 @@ const GlobalContextProvider = ({ children }) => {
     getCartLocalBooks()
   };
 
-  const totalPrice = localCartBooks.reduce(
+  const totalPrice = localCartBooks && localCartBooks.reduce(
     (price, item) => price + item.qty * item.price,
     0
   );
