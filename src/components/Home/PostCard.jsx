@@ -11,7 +11,6 @@ import { RWebShare } from "react-web-share";
 
 const PostCard = () => {
   const { fromLocal } = useContext(GlobalContext);
-  
 
   // getPostFromStorage and useEffect is in context
 
@@ -36,7 +35,8 @@ const PostCard = () => {
                   </Modal>
                 )} */}
       <div className="text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 w-[100%] md:max-h-[1000px] md:overflow-y-scroll">
-        {fromLocal && fromLocal.length > 0 &&
+        {fromLocal &&
+          fromLocal.length > 0 &&
           fromLocal.map((item) => {
             return (
               <div
@@ -90,11 +90,18 @@ const PostCard = () => {
               </div>
             );
           })}
-        <Link to="/blog">
-          <div className="flex justify-center items-center mb-10 font-bold hover:text-[#023047] italic text-md md:text-xl">
-            See more posts
-          </div>
-        </Link>
+
+        <div className="ml-8 font-bold text-center">
+          {fromLocal && fromLocal.length > 0 ? (
+            <Link to="/blog">
+              <div className="flex justify-center items-center mb-10 font-bold hover:text-[#023047] italic text-md md:text-xl ">
+                See more posts
+              </div>
+            </Link>
+          ) : (
+            <div>No Post? Add a New Post from the Dashboard</div>
+          )}
+        </div>
       </div>
     </>
   );
