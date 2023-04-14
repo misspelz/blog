@@ -11,6 +11,9 @@ const DashSideBar = () => {
         <li className="border px-2 w-[70%] rounded-md font-bold hover:bg-white hover:text-[#023047]">
           <Link to="/dashboard/newpost">NEW POST</Link>
         </li>
+        <li className="border px-2 w-[70%] rounded-md font-bold hover:bg-white hover:text-[#023047] mt-10">
+          <Link to="/dashboard/newbook">NEW BOOK</Link>
+        </li>
         
         
       </ul>

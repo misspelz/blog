@@ -14,6 +14,7 @@ import DashPage from "./components/Dashboard/DashPage";
 // import DashLayOut from "./components/Dashboard/DashLayout";
 import DashLayOut from "./components/Dashboard/DashLayOut";
 import NewPost from "./components/Home/NewPost";
+import AddStoreBook from "./components/Dashboard/AddStoreBook"
 
 
 const Router = () => {
@@ -23,6 +24,7 @@ const Router = () => {
         <Route path="/dashboard" element={<DashLayOut />}>
            <Route path="home" element={<DashPage />} />
            <Route path="newpost" element={<NewPost />} />
+           <Route path="newbook" element={<AddStoreBook />} />
         </Route>
 
         <Route
