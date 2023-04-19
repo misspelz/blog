@@ -74,7 +74,6 @@ const GlobalContextProvider = ({ children }) => {
     const localBookCartItems = localStorage.getItem("cartbooks")
       ? JSON.parse(localStorage.getItem("cartbooks"))
       : [];
-      
 
     const itemExist = localBookCartItems.find((book) => book.id === id);
 

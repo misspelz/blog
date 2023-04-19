@@ -7,7 +7,7 @@ const DashLayOut = () => {
   return (
     <div>
       <DashSideBar />
-      <main className='ml-[200px] h-screen'>{<Outlet/>}</main>
+      <main className='ml-[100px] h-screen'>{<Outlet/>}</main>
       {/* <Footer /> */}
     </div>
   )

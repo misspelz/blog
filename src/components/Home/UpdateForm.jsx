@@ -6,7 +6,8 @@ import { toast } from "react-toastify";
 
 const UpdateForm = ({ props: { id } }) => {
   console.log(id);
-  const { loading, setLoading, setUpdateModal, getPostFromStorageForBlog} = useContext(GlobalContext);
+  const { loading, setLoading, setUpdateModal, getPostFromStorageForBlog } =
+    useContext(GlobalContext);
 
   const [state, setState] = useState({
     image: "",
@@ -24,12 +25,8 @@ const UpdateForm = ({ props: { id } }) => {
   const getLocalPosts = () => {
     const getPosts = JSON.parse(localStorage.getItem("posts"));
     const copy = [...getPosts];
-    console.log(copy)
 
     const singlepost = copy.find((post) => post.id === id);
-    console.log(singlepost)
-
-    // const post = copy[singlepostindex]
 
     setState({
       image: singlepost.image,
@@ -51,7 +48,6 @@ const UpdateForm = ({ props: { id } }) => {
     });
   };
 
-
   // update post submit button
   const handlePostSubmit = (e) => {
     e.preventDefault();
@@ -64,9 +60,6 @@ const UpdateForm = ({ props: { id } }) => {
       const copy = [...allPosts];
 
       const singlepost = copy.find((post) => post.id === id);
-
-      // const post = copy[singlepostindex];
-      console.log(singlepost)
 
       singlepost.image = image;
       singlepost.title = title;
@@ -81,9 +74,8 @@ const UpdateForm = ({ props: { id } }) => {
 
       setUpdateModal(false);
 
-      getPostFromStorageForBlog()
+      getPostFromStorageForBlog();
     }, 3000);
-
   };
 
   return (
@@ -150,7 +142,6 @@ const UpdateForm = ({ props: { id } }) => {
           <Spinner />
         ) : (
           <button
-            // onClick={post.id}
             className="text-white rounded mt-4 font-semibold bg-[#023047] hover:bg-orange-500"
           >
             Submit

@@ -3,8 +3,8 @@ import { IoMdCheckmarkCircle } from "react-icons/io";
 
 const Newsletter = () => {
   return (
-    <div className="text-[#023047] h-[400px] flex flex-row justify-between items-center p-20 md:p-40 bg-[#023047]">
-      <div>
+    <div className="text-[#023047] h-[400px] flex md:flex-row justify-between items-center p-10  bg-[#023047]">
+      <div className="w-[100%]">
         <h2 className="text-white text-2xl md:text-4xl mb-4 font-bold italic">
           GET THE LATEST <span className="text-[#ffa500]">INFO</span>
         </h2>
@@ -32,9 +32,9 @@ const Newsletter = () => {
             <input
               type="text"
               placeholder="   Email address"
-              className="w-[300px] rounded-l border-0 py-2"
+              className="w-[100%] md:w-[85%] rounded border-0 py-2"
             />
-            <button className="bg-[#023047] w-[93.5%] md:w-[55.5%] text-white border rounded-r px-4 font-semibold hover:bg-[#ffa500] hover:text-white hover:border-[#023047] py-2 mt-4">
+            <button className="bg-[#023047] w-[100%] md:w-[85%] text-white border rounded px-4 font-semibold hover:bg-[#ffa500] hover:text-white hover:border-[#023047] py-2 mt-4 rounded">
               Subscribe
             </button>
             <h3 className="text-white text-[18px] md:text-xl mt-4 font-semibold">
@@ -44,9 +44,9 @@ const Newsletter = () => {
         </div>
       </div>
 
-      <div className="hidden md:block shadow-[5px_5px_0px_0px_rgba(255,165,0)]">
+      <div className="md:w-[100%]  hidden md:flex md:justify-center ">
         <img
-          className="w-[18rem]"
+          className="md:w-[70%]"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0A3KvckYJ0qCCLvAHKU8M2PghbJZFJeZ4Lg&usqp=CAU"
           alt=""
         />
