@@ -4,7 +4,7 @@ import { IoMdCheckmarkCircle } from "react-icons/io";
 const Newsletter = () => {
   return (
     <div className="text-[#023047] h-[400px] flex md:flex-row justify-between items-center p-10  bg-[#023047]">
-      <div className="w-[100%]">
+      <div className="w-[100%] md:ml-10">
         <h2 className="text-white text-2xl md:text-4xl mb-4 font-bold italic">
           GET THE LATEST <span className="text-[#ffa500]">INFO</span>
         </h2>
@@ -46,7 +46,7 @@ const Newsletter = () => {
 
       <div className="md:w-[100%]  hidden md:flex md:justify-center ">
         <img
-          className="md:w-[70%]"
+          className="md:w-[50%]"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0A3KvckYJ0qCCLvAHKU8M2PghbJZFJeZ4Lg&usqp=CAU"
           alt=""
         />
