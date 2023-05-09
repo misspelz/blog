@@ -62,7 +62,7 @@ const ImageDiv = () => {
 
       {/* left arrow */}
       <div
-        onClick={() => prevSlide}
+        onClick={() => prevSlide()}
         className="hidden group-hover:block absolute top-[45%] md:top-[45%] -translate-x-0 translate-y-[-50%] left-5 text-white cursor-pointer"
       >
         <MdArrowBackIosNew size={30} />
@@ -70,7 +70,7 @@ const ImageDiv = () => {
 
       {/* right arrow */}
       <div
-        onClick={() => nextSlide}
+        onClick={() => nextSlide()}
         className="hidden group-hover:block absolute top-[45%] md:top-[45%] -translate-x-0 translate-y-[-50%] right-5 text-white cursor-pointer"
       >
         <MdArrowForwardIos size={30} />

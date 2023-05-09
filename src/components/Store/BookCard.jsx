@@ -11,6 +11,14 @@ const BookCard = () => {
 
   // Add To Cart Button is in context
 
+  const truncate = (str, num) => {
+    if (str.length > num) {
+      str = str.substring(0, num) + "...";
+      return str;
+    }
+    return str;
+  };
+
   return (
     <div className="text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 w-[100%] md:max-h-[1200px] md:overflow-y-scroll w-[100%]">
       {fromLocalForBook &&
@@ -18,7 +26,7 @@ const BookCard = () => {
           return (
             <div
               key={item.id}
-              className="flex flex-col justify-between my-6 mx-6 p-8 md:p-6 rounded-md bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] h-[820px] md:h-[620px]"
+              className="flex flex-col justify-between my-6 mx-6 p-8 md:p-6 rounded-md bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] h-[700px] md:h-[650px]"
             >
               <div>
                 <img
@@ -27,7 +35,7 @@ const BookCard = () => {
                   className="mb-2 w-full"
                 />
                 <h3 className="mb-2 font-bold text-xl text-[#023047] hover:text-[#ffa500] cursor-pointer">
-                  {item.title}
+                {truncate(item.title, 50)}
                 </h3>
                 <p className="text-[12px] font-bold text-[#023047]">
                   written by: {item.writer}

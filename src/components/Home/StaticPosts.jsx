@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { GlobalContext } from "../../context";
+import React from "react";
+// import { GlobalContext } from "../../context";
 // import { FaEdit } from "react-icons/fa";
 // import { MdDeleteForever } from "react-icons/md";
 import { FaShareAlt } from "react-icons/fa";
@@ -9,11 +9,9 @@ import { Link } from "react-router-dom";
 import { RWebShare } from "react-web-share";
 // import ScrollToTop from "react-scroll-to-top";
 import { data } from "../Dashboard/Data";
-import StaticPosts from "./StaticPosts"
-
 
 const PostCard = () => {
-  const { fromLocal } = useContext(GlobalContext);
+//   const { fromLocal } = useContext(GlobalContext);
   const postData = data
   console.log(postData)
 
@@ -36,19 +34,16 @@ const PostCard = () => {
 
   return (
     <>
-    
 
       {/* {updateModal && (
                   <Modal>
                     <UpdateForm props={{ id: itemId }} />
                   </Modal>
                 )} */}
-                
-      <div className="text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 w-[96%] md:max-h-[1000px] md:overflow-y-scroll">
-      <StaticPosts />
-        {fromLocal &&
-          fromLocal.length > 0 &&
-          fromLocal.map((item) => {
+      {/* <div className="text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 w-[100%] md:max-h-[1000px] md:overflow-y-scroll"> */}
+        {postData &&
+          postData.length > 0 &&
+          postData.map((item) => {
             return (
               <div
                 key={item.id}
@@ -102,7 +97,7 @@ const PostCard = () => {
             );
           })}
 
-        <div className="ml-8 font-bold text-center">
+        {/* <div className="ml-8 font-bold text-center">
           {fromLocal && fromLocal.length > 0 ? (
             <Link to="/blog">
               <div className="flex justify-center items-center mb-10 font-bold hover:text-[#023047] italic text-md md:text-xl ">
@@ -112,8 +107,8 @@ const PostCard = () => {
           ) : (
             <div>No Post? Add a New Post from the Dashboard</div>
           )}
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </>
   );
 };

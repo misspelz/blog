@@ -13,8 +13,8 @@ const DashSideBar = () => {
         </li>
       </ul>
 
-      <button className="mx-2 text-[14px] text-center border md:px-2 mb-8 md:w-[70%] hover:bg-white hover:text-[#023047] font-semibold hover:font-bold rounded-md">
-        <Link to="/">Back to Home</Link>
+      <button className="py-2 mx-2 md:ml-8 text-[14px] text-center border md:py-2 mb-8 md:w-[70%] hover:bg-white hover:text-[#023047] font-semibold hover:font-bold rounded-md">
+        <Link to="/">HOME</Link>
       </button>
     </div>
   );

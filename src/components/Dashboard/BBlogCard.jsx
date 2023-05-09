@@ -34,7 +34,7 @@ const BlogCard = () => {
             return (
               <div
                 key={item.id}
-                className="flex flex-col justify-between my-6 mx-6 p-6 rounded-md bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] h-[500px] sm:h-[420px]"
+                className="flex flex-col justify-between my-6 mx-6 p-6 rounded-md bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] h-[450px] sm:h-[420px]"
               >
                 <div>
                   <Link to={`/blog/${item.id}`}>

@@ -2,7 +2,7 @@ import React from "react";
 import PostCard from "./PostCard";
 import HomeHero from "./HomeHero";
 import SideBar from "../Layout/SideBar";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   return (
@@ -18,8 +18,11 @@ const Homepage = () => {
         <div className=" bg-[#ffa500] w-full h-[2px]"></div>
       </div>
 
+      <h3 className="text-center my-4 text-xl font-bold text-[#023047]">You can add new posts from the <span className="text-[#ffa500] hover:underline"><Link to="/dashboard">Dashboard</Link></span> Section</h3>
+
       {/* NEW POST FORM */}
       <div className="w-full flex">
+        
         <PostCard />
         <SideBar />
       </div>

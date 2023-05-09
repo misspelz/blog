@@ -7,6 +7,7 @@ import { RWebShare } from "react-web-share";
 import { Link } from "react-router-dom";
 // import Modal from "../Modal";
 // import UpdateForm from "../Home/UpdateForm";
+import StaticPosts from "../Home/StaticPosts"
 
 const BlogCard = () => {
   const {  fromLocalForBlog } =
@@ -29,6 +30,7 @@ const BlogCard = () => {
         </Modal>
       )} */}
       <div className="text-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 w-[100%]">
+        <StaticPosts />
         {fromLocalForBlog &&
           fromLocalForBlog.map((item) => {
             return (
